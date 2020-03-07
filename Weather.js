@@ -9,25 +9,25 @@ const weatherOptions = {
         iconName: 'weather-rainy',
         gradient: ['#00C6EB', '#005BEA'],
         title: "Rainy",
-        subtitle: "It's raining 🌧"
+        subtitle: "It's raining 🌧, Take your umbrella 🌂"
     },
     Clear: {
         iconName: 'white-balance-sunny',
         gradient: ['#FEF253', '#FF7300'],
         title: 'Sunny',
-        subtitle: "Let's go out and play ☀️!!"
+        subtitle: "Let's go out and play 😎!!"
     },
     Thunderstorm: {
         iconName: 'weather-lightning',
         gradient: ['#373B44', '#4286F4'],
         title: 'Thunderstorm',
-        subtitle: ''
+        subtitle: 'Thunder storm in the house ! ⚡️'
     },
     Clouds: {
         iconName: 'apple-icloud',
         gradient: ['#D7D2CC', '#304352'],
         title: 'Cloudy',
-        subtitle: ''
+        subtitle: "I know, It's so boring 😑"
     },
     Snow: {
         iconName: 'snowflake',
@@ -39,37 +39,36 @@ const weatherOptions = {
         iconName: 'weather-hail',
         gradient: ['#89F7FE', '#66A6FF'],
         title: 'Drizzle',
-        subtitle: "It's like rain 🌦"
+        subtitle: "Maybe, It's like rain 🌦"
     },
     Atmosphere: {
         iconName: 'weather-hail',
         gradient: ['#89F7FE', '#66A6FF'],
-        title: '',
-        subtitle: ''
+        title: 'Atmosphere',
+        subtitle: "Maybe, It's like little Misty"
     },
     Mist: {
         iconName: 'weather-fog',
         gradient: ['#eef2f3', '#8e9eab'],
-        title: 'Fogy',
-        subtitle: ''
+        title: 'Misty',
+        subtitle: "It's so Misty ~🌫~"
     },
     Haze: {
         iconName: 'weather-fog',
         gradient: ['#D7D2CC', '#304352'],
-        title: 'Haze',
-        subtitle: "It's like you have no glasses on."
+        title: 'Fog',
+        subtitle: "It's like you have no glasses on. 👻"
     },
     Dust: {
         iconName: 'weather-fog',
         gradient: ['#D39D38', '#D7D2CC'],
         title: 'Dusty',
-        subtitle: ''
+        subtitle: 'Where are the fine dust coming from ? 🤦🏻‍♀️'
     }
 }
 
 export default function Weather({ temp, condition }) {
     console.log('Condition: ' + condition);
-    condition = 'Mist'
     return (
         <LinearGradient
             colors={weatherOptions[condition].gradient}
@@ -126,15 +125,15 @@ const styles = StyleSheet.create({
     },
     title: {
         color: 'white',
-        fontSize: 38,
-        fontWeight: '300',
-        marginBottom: 20
+        fontSize: 45,
+        fontWeight: '200',
+        marginBottom: 15
     },
     subtitle: {
-        fontSize: 24,
-        fontWeight: '600',
+        fontSize: 28,
+        fontWeight: '500',
         color: 'white',
-        marginBottom: 50
+        marginBottom: 30
     },
     textContainer: {
         paddingHorizontal: 25,
