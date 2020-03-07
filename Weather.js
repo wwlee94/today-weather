@@ -111,7 +111,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingTop: 40
     },
     temp: {
         fontSize: 48,
@@ -127,13 +128,13 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 45,
         fontWeight: '200',
-        marginBottom: 15
+        marginBottom: 10
     },
     subtitle: {
         fontSize: 28,
         fontWeight: '500',
         color: 'white',
-        marginBottom: 30
+        marginBottom: 10
     },
     textContainer: {
         paddingHorizontal: 25,
