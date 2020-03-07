@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         fontSize: 30
     },
     lottie:{
-        width: 100,
-        height: 100
+        width: 250,
+        height: 250
     }
 });
