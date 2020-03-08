@@ -6,10 +6,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const weatherOptions = {
     Rain: {
-        iconName: 'weather-rainy',
+        iconName: 'weather-pouring',
         gradient: ['#00C6EB', '#005BEA'],
         title: "Rainy",
-        subtitle: "It's raining 🌧, Take your umbrella 🌂"
+        subtitle: "It's raining 🌧 \nTake your umbrella ! 🌂"
     },
     Clear: {
         iconName: 'white-balance-sunny',
@@ -36,27 +36,27 @@ const weatherOptions = {
         subtitle: 'Do you want to build a snowman? ☃️'
     },
     Drizzle: {
-        iconName: 'weather-hail',
+        iconName: 'weather-rainy',
         gradient: ['#89F7FE', '#66A6FF'],
         title: 'Drizzle',
         subtitle: "Maybe, It's like rain 🌦"
     },
     Atmosphere: {
-        iconName: 'weather-hail',
-        gradient: ['#89F7FE', '#66A6FF'],
+        iconName: 'waze',
+        gradient: ['#66A6FF', '#89F7FE'],
         title: 'Atmosphere',
         subtitle: "Maybe, It's like little Misty"
     },
+    Haze: {
+        iconName: 'weather-partlycloudy',
+        gradient: ['#F2C94C', '#F2994A'],
+        title: 'Haze',
+        subtitle: "It's extremely small, dry particles in the air"
+    },
     Mist: {
-        iconName: 'weather-fog',
+        iconName: 'weather-partlycloudy',
         gradient: ['#eef2f3', '#8e9eab'],
         title: 'Misty',
-        subtitle: "It's so Misty ~🌫~"
-    },
-    Haze: {
-        iconName: 'weather-fog',
-        gradient: ['#D7D2CC', '#304352'],
-        title: 'Fog',
         subtitle: "It's like you have no glasses on. 👻"
     },
     Dust: {
@@ -81,7 +81,7 @@ export default function Weather({ temp, condition }) {
                     name={weatherOptions[condition].iconName}
                     color='white'
                 />
-                <Text style={styles.temp}>{temp}</Text>
+                <Text style={styles.temp}>{temp}°</Text>
             </View>
             <View style={{ ...styles.halfContainer, ...styles.textContainer }}>
                 <Text style={styles.title}>{weatherOptions[condition].title}</Text>
