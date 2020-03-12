@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
+const hour = new Date().getHours();
+
 const weatherOptions = {
     Rain: {
         iconName: 'weather-pouring',
@@ -16,6 +18,12 @@ const weatherOptions = {
         gradient: ['#FEF253', '#FF7300'],
         title: 'Sunny',
         subtitle: "Let's go out and play 😎!!"
+    },
+    ClearNight: {
+        iconName: 'weather-night',
+        gradient: ['#2C5364', '#203A43', '#0F2027'],
+        title: 'Clear',
+        subtitle: "DO WHAT YOU LIKE. LIKE WHAT YOU DO !"
     },
     Thunderstorm: {
         iconName: 'weather-lightning',
@@ -69,6 +77,9 @@ const weatherOptions = {
 
 export default function Weather({ temp, condition }) {
     console.log('Condition: ' + condition);
+    if (condition === 'Clear' && hour > 18) {
+        condition = 'ClearNight'
+    }
     return (
         <LinearGradient
             colors={weatherOptions[condition].gradient}
