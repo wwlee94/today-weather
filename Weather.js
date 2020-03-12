@@ -21,9 +21,9 @@ const weatherOptions = {
     },
     ClearNight: {
         iconName: 'weather-night',
-        gradient: ['#2C5364', '#203A43', '#0F2027'],
+        gradient: '',
         title: 'Clear',
-        subtitle: "DO WHAT YOU LIKE. LIKE WHAT YOU DO !"
+        subtitle: "DO WHAT YOU LIKE. \nLIKE WHAT YOU DO !"
     },
     Thunderstorm: {
         iconName: 'weather-lightning',
@@ -59,7 +59,7 @@ const weatherOptions = {
         iconName: 'weather-partlycloudy',
         gradient: ['#F2C94C', '#F2994A'],
         title: 'Haze',
-        subtitle: "It's extremely small, dry particles in the air"
+        subtitle: "It's extremely small, \ndry particles in the air"
     },
     Mist: {
         iconName: 'weather-partlycloudy',
@@ -77,8 +77,10 @@ const weatherOptions = {
 
 export default function Weather({ temp, condition }) {
     console.log('Condition: ' + condition);
-    if (condition === 'Clear' && hour > 18) {
-        condition = 'ClearNight'
+    
+    if ((hour >= 18 && hour <= 24) || (hour >= 0 && hour <= 6)){
+        if (condition === 'Clear') condition = 'ClearNight'
+        weatherOptions[condition].gradient = ['#2C5364', '#203A43', '#0F2027'];
     }
     return (
         <LinearGradient
