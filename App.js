@@ -25,7 +25,7 @@ export default class App extends React.Component {
         temp,
         condition: weather[0].main
       });
-    }, 2000);
+    }, 1500);
   };
 
   getLocation = async () => {
